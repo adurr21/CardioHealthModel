@@ -1,113 +1,157 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Cardiovascular Risk Prediction</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <h1>Cardiovascular Risk Prediction</h1>
 
-        <form id="predictionForm">     
-            
-            <!-- General Health -->
-            <label for="general-health">General Health:</label>
-            <select id="general-health" name="general-health">
-                <option value="Fair">Fair</option>
-                <option value="Very Good">Very Good</option>
-                <option value="Good">Good</option>
-                <option value="Excellent">Excellent</option>
-                <option value="Poor">Poor</option>
-            </select><br>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cardiovascular Risk Prediction</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-            <!-- Last Checkup -->
-            <label for="last-checkup">Last Checkup:</label>
+<body>
+    <h1>Cardiovascular Risk Prediction</h1>
+
+    <form id="predictionForm">
+
+        <!-- General Health -->
+        <label class="title-label" for="general-health">General Health:</label>
+        <select id="general-health" name="general-health">
+            <option value="Fair">Fair</option>
+            <option value="Very Good">Very Good</option>
+            <option value="Good">Good</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Poor">Poor</option>
+        </select><br>
+
+        <!-- Last Checkup -->
+            <label class="title-label" for="last-checkup">Last Checkup:</label>
             <select id="last-checkup" name="last-checkup">
-                <option value="Within the past year">Within the past year</option>
-                <option value="Within the past 2 years">Within the past 2 years</option>
-                <option value="Within the past 5 years">Within the past 5 years</option>
-                <option value="5 or more years ago">5 or more years ago</option>
-            </select><br>
+            <option value="Within the past year">Within the past year</option>
+            <option value="Within the past 2 years">Within the past 2 years</option>
+            <option value="Within the past 5 years">Within the past 5 years</option>
+            <option value="5 or more years ago">5 or more years ago</option>
+        </select><br>
 
-            <!-- Skin Cancer -->
-            <label for="skin-cancer">Skin Cancer:</label>
-            <input type="radio" id="skin-cancer-yes" name="skin-cancer" value="yes">
-            <label for="skin-cancer-yes">Yes</label>
-            <input type="radio" id="skin-cancer-no" name="skin-cancer" value="no">
-            <label for="skin-cancer-no">No</label><br>
+        <!-- Skin Cancer -->
+        <div class="radio-container">
+            <label for="skin-cancer" class="radio-label">Skin Cancer:</label>
+            <div class="radio-options">
+                <input type="radio" id="skin-cancer-yes" name="skin-cancer" value="yes" class="radio-input">
+                <label for="skin-cancer-yes">Yes</label>
+                <input type="radio" id="skin-cancer-no" name="skin-cancer" value="no" class="radio-input">
+                <label for="skin-cancer-no">No</label>
+            </div>
+        </div>
 
-            <!-- Other Cancer -->
-            <label for="other-cancer">Other Cancer:</label>
-            <input type="radio" id="other-cancer-yes" name="other-cancer" value="yes">
-            <label for="other-cancer-yes">Yes</label>
-            <input type="radio" id="other-cancer-no" name="other-cancer" value="no">
-            <label for="other-cancer-no">No</label><br>
+        <!-- Other Cancer -->
+        <div class="radio-container">
+            <label class="radio-label" for="other-cancer">Other Cancer:</label>
+            <div class="radio-options">
+                <input type="radio" id="other-cancer-yes" name="other-cancer" value="yes" class="radio-input" required>
+                <label for="other-cancer-yes">Yes</label>
+                <input type="radio" id="other-cancer-no" name="other-cancer" value="no" class="radio-input">
+                <label for="other-cancer-no">No</label>
+            </div>
+        </div>
 
-            <!-- Depression -->
-            <label for="depression">Depression:</label>
-            <input type="radio" id="depression-yes" name="depression" value="yes">
-            <label for="depression-yes">Yes</label>
-            <input type="radio" id="depression-no" name="depression" value="no">
-            <label for="depression-no">No</label><br>
+        <!-- Depression -->
+        <div class="radio-container">
+            <label class="radio-label" for="depression">Depression:</label>
+            <div class="radio-options">
+                <input type="radio" id="depression-yes" name="depression" value="yes" class="radio-input" required>
+                <label for="depression-yes">Yes</label>
+                <input type="radio" id="depression-no" name="depression" value="no" class="radio-input">
+                <label for="depression-no">No</label>
+            </div>
+        </div>
 
-            <!-- Diabetes -->
-            <label for="diabetes">Diabetes:</label>
-            <input type="radio" id="diabetes-yes" name="diabetes" value="yes">
-            <label for="diabetes-yes">Yes</label>
-            <input type="radio" id="diabetes-no" name="diabetes" value="no">
-            <label for="diabetes-no">No</label><br>
+        <!-- Diabetes -->
+        <div class="radio-container">
+            <label class="radio-label" for="diabetes">Diabetes:</label>
+            <div class="radio-options">
+                <input type="radio" id="diabetes-yes" name="diabetes" value="yes" class="radio-input" required>
+                <label for="diabetes-yes">Yes</label>
+                <input type="radio" id="diabetes-no" name="diabetes" value="no" class="radio-input">
+                <label for="diabetes-no">No</label>
+            </div>
+        </div>
 
-            <!-- Smoking History -->
-            <label for="smoking-history">Smoking History:</label>
-            <input type="radio" id="smoking-history-yes" name="smoking-history" value="yes">
-            <label for="smoking-history-yes">Yes</label>
-            <input type="radio" id="smoking-history-no" name="smoking-history" value="no">
-            <label for="smoking-history-no">No</label><br>
+        <!-- Smoking History -->
+        <div class="radio-container">
+            <label class="radio-label" for="smoking-history">Smoking History:</label>
+            <div class="radio-options">
+                <input type="radio" id="smoking-history-yes" name="smoking-history" value="yes" class="radio-input"
+                    required>
+                <label for="smoking-history-yes">Yes</label>
+                <input type="radio" id="smoking-history-no" name="smoking-history" value="no" class="radio-input">
+                <label for="smoking-history-no">No</label>
+            </div>
+        </div>
 
-            <!-- Exercise -->
-            <label for="exercise">Exercise:</label>
-            <input type="radio" id="exercise-yes" name="exercise" value="yes">
-            <label for="exercise-yes">Yes</label>
-            <input type="radio" id="exercise-no" name="exercise" value="no">
-            <label for="exercise-no">No</label><br>
+        <!-- Exercise -->
+        <div class="radio-container">
+            <label class="radio-label" for="exercise">Exercise:</label>
+            <div class="radio-options">
+                <input type="radio" id="exercise-yes" name="exercise" value="yes" class="radio-input" required>
+                <label for="exercise-yes">Yes</label>
+                <input type="radio" id="exercise-no" name="exercise" value="no" class="radio-input">
+                <label for="exercise-no">No</label>
+            </div>
+        </div>
 
-            <!-- Arthritis -->
-            <label for="arthritis">Arthritis:</label>
-            <input type="radio" id="arthritis-yes" name="arthritis" value="yes">
-            <label for="arthritis-yes">Yes</label>
-            <input type="radio" id="arthritis-no" name="arthritis" value="no">
-            <label for="arthritis-no">No</label><br>
+        <!-- Arthritis -->
+        <div class="radio-container">
+            <label class="radio-label" for="arthritis">Arthritis:</label>
+            <div class="radio-options">
+                <input type="radio" id="arthritis-yes" name="arthritis" value="yes" class="radio-input" required>
+                <label for="arthritis-yes">Yes</label>
+                <input type="radio" id="arthritis-no" name="arthritis" value="no" class="radio-input">
+                <label for="arthritis-no">No</label>
+            </div>
+        </div>
 
-            <!-- Sex -->
-            <label for="sex">Sex:</label>
-            <input type="radio" id="male" name="sex" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="sex" value="female">
-            <label for="female">Female</label><br>
+        <!-- Sex -->
+        <div class="radio-container">
+            <label class="radio-label" for="sex">Sex:</label>
+            <div class="radio-options">
+                <input type="radio" id="male" name="sex" value="male" class="radio-input" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female" class="radio-input">
+                <label for="female">Female</label>
+            </div>
+        </div>
 
-            <!-- Height -->
-            <label for="height-feet">Height (Feet):</label>
-            <input type="number" id="height-feet" name="height-feet" min="0" required> feet<br>
-            <label for="height-inches">Height (Inches):</label>
-            <input type="number" id="height-inches" name="height-inches" min="0" max="11" required> inches<br>
+        <!-- Age -->
+        <label class="title-label" for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" pattern="[0-9]*" inputmode="numeric" required><br>
 
-            <!-- Weight -->
-            <label for="weight">Weight:</label>
-            <input type="number" id="weight" name="weight" min="0" required> 
 
-            <!-- Units (kg/lbs) -->
-            <label for="kg">kg</label>
-            <input type="radio" id="kg" name="weight-unit" value="kg">
-            <label for="lbs">lbs</label>
-            <input type="radio" id="lbs" name="weight-unit" value="lbs"><br>
-          
-            <!-- General Health	Checkup	Skin Cancer	Other Cancer	Depression	Diabetes	Smoking History	Alcohol Consumption	Exercise	Heart Disease	Arthritis	Sex	Age	Height (cm)	Weight (kg)	BMI -->
-            
-            <button type="submit">Predict</button>
-        </form>
-        <script src="js/script.js" async defer></script>
-    </body>
+        <!-- Alcohol Consumption -->
+        <label class="title-label" for="alcohol-consumption">Number of days in the past month that you have consumed alcohol:</label>
+        <input type="number" id="alcohol-consumption" name="alcohol-consumption" min="0" max="30" required><br>
+
+
+        <!-- Height -->
+        <label class="title-label" for="height-feet">Height (Feet):</label>
+        <input type="number" id="height-feet" name="height-feet" min="0" pattern="[0-9]*" inputmode="numeric"
+            required><br>
+        <label class="title-label" for="height-inches">Height (Inches):</label>
+        <input type="number" id="height-inches" name="height-inches" min="0" max="11" pattern="[0-9]*"
+            inputmode="numeric" required><br>
+
+        <!-- Weight -->
+        <label class="title-label" for="weight">Weight (lbs):</label>
+        <input type="number" id="weight" name="weight" min="0" inputmode="numeric" required>
+
+        <!-- BMI is calulated based on height/weight so this isn't part of form but we will have to take care of this later -->
+
+        <!-- General Health	Checkup	Skin Cancer	Other Cancer	Depression	Diabetes	Smoking History	Alcohol Consumption	Exercise	Heart Disease	Arthritis	Sex	Age	Height (cm)	Weight (kg)	BMI -->
+
+        <button type="submit">Predict</button>
+    </form>
+    <script src="js/script.js" async defer></script>
+</body>
+
 </html>
