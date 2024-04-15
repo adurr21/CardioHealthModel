@@ -49,7 +49,7 @@ document.getElementById("predictionForm").addEventListener("submit", function(ev
         "Diabetes": document.querySelector('input[name="diabetes"]:checked').value,
         "Smoking History": document.querySelector('input[name="smoking-history"]:checked').value,
         "Alcohol Consumption": document.getElementById("alcohol-consumption").value,
-        "Excercise": document.querySelector('input[name="exercise"]:checked').value,
+        "Exercise": document.querySelector('input[name="exercise"]:checked').value,
         "Arthritis": document.querySelector('input[name="arthritis"]:checked').value,
         "Sex": document.querySelector('input[name="sex"]:checked').value,
         "Age": ageStr,
@@ -63,6 +63,7 @@ document.getElementById("predictionForm").addEventListener("submit", function(ev
         // request method
         method: 'POST',
         headers: {
+            'Accept':'*/*',
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin':'*',
         },
