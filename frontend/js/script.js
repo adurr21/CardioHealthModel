@@ -1,6 +1,5 @@
 document.getElementById("predictionForm").addEventListener("submit", function(event) {
     
-    // prevents page refresh on submit button, for now at least. 
     event.preventDefault();
 
     var totalInch = (parseInt(document.getElementById("height-feet").value) * 12) + (parseInt(document.getElementById("height-inches").value));
@@ -36,10 +35,9 @@ document.getElementById("predictionForm").addEventListener("submit", function(ev
     } else if (75 <= age && age <= 79) {
         ageStr = "75 to 79";
     } else {
-        ageStr = "80 or older";
+        ageStr = "80+";
     }
 
-    // create key value pairs for the form data 
     const formData = {
         "General Health": document.getElementById("general-health").value,
         "Checkup": document.getElementById("last-checkup").value,
@@ -58,24 +56,46 @@ document.getElementById("predictionForm").addEventListener("submit", function(ev
         "BMI": '' + bmi.toFixed(2) + ''
     };
 
-    // fetch server 
     fetch('http://request.austindurr.com:3360/predict', {
-        // request method
         method: 'POST',
         headers: {
             'Accept':'*/*',
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin':'*',
         },
-        // converts js value to a JSON string
         body: JSON.stringify(formData)
     })
-    // promise chain , convert response into js object and logs to console for now
     .then(response => response.json())
     .then(data => {
+        var prediction = data.prediction; 
         console.log('Success:', data);
+        console.log('Prediction:', prediction);
+        handlePrediction(prediction);
     })
     .catch((error) => {
         console.error('Error:', error);
     });
 });
+
+function handlePrediction(prediction) {
+    
+    document.getElementById("predictionOutput").style.display = "block";
+    var outputElement = document.getElementById("predictionOutput");
+
+    var outputMessage;
+    if (prediction === '[0]') {
+        outputMessage = "Low risk";
+        document.getElementById("predictionOutput").style.backgroundColor = "#e8f9ed";
+        document.getElementById("predictionOutput").style.color = "#177233";
+
+
+    } else if (prediction === '[1]') {
+        outputMessage = "High risk";
+        document.getElementById("predictionOutput").style.backgroundColor = "#ffecec";
+        document.getElementById("predictionOutput").style.color = "#7d353b";
+    } else {
+        outputMessage = "Unknown risk";
+    }
+
+    outputElement.textContent = "Prediction result: " + outputMessage;
+}

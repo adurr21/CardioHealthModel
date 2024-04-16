@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+#particles-js {
+    height: 100%;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -15,17 +19,16 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
 }
 
-
 h1 {
     color: #007bff; 
     text-align: center; 
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
-
 
 p {
     line-height: 1.6;
 }
-
 
 a {
     color: #007bff; 
@@ -67,19 +70,17 @@ select {
     box-sizing: border-box; 
 }
 
-/* Form Select */
 select {
     padding: 8px 30px 8px 10px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
     background-color: #fff;
     appearance: none; 
-    background-image: url('./../images/chevron.svg');
+    background-image: url('./../assets/chevron.svg');
     background-position: calc(100% - 5px) center; 
     background-repeat: no-repeat; 
     background-size: 20px; 
 }
-
 
 button[type="submit"] {
     display: block;
@@ -96,7 +97,6 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
-
 
 .radio-container {
     display: flex;
@@ -121,4 +121,16 @@ button[type="submit"]:hover {
 
 .radio-input {
     margin-right: 5px;
+}
+
+#predictionOutput {
+    display: none; 
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    text-align: center;
 }
