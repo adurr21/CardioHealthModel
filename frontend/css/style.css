@@ -212,6 +212,7 @@ button[type="submit"]:hover {
     .flex-item:last-child {
         margin-left: 0px;
         margin-right: 0px;
+        margin-bottom: 50px;
 
     }
 }
