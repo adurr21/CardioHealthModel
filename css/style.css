@@ -39,13 +39,38 @@ a:hover {
     text-decoration: underline;
 }
 
-#predictionForm {
+.flex-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-item:first-child {
+    margin-right: 25px;
+}
+
+.flex-item:last-child {
+    margin-left: 25px;
+}
+
+.default-styling {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box-styling {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
 label {
@@ -133,4 +158,41 @@ button[type="submit"]:hover {
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
     text-align: center;
+}
+
+#text-info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%; /* Ensure the container fills the height of its parent */
+}
+
+.box-styling:first-child {
+    margin-top: 0px;
+}
+
+.box-styling:last-child {
+    margin-bottom: 0px;
+}
+
+.box-styling h3 {
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 1286px) {
+    .default-styling {
+        margin-bottom: 50px;
+    }
+
+    .flex-item:first-child {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    
+    .flex-item:last-child {
+        margin-left: 0px;
+        margin-right: 0px;
+
+    }
 }
